@@ -1,5 +1,7 @@
 ---
 const { pageTitle } = Astro.props;
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -12,7 +14,11 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Navbar />
     <h1>{pageTitle}</h1>
     <slot />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
