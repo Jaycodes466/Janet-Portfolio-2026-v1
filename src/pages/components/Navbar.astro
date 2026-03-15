@@ -19,7 +19,7 @@ import { Font } from "astro:assets";
         <li><a href="/portfolio">Portfolio</a></li>
       </ul>
 
-      <a href="/contact" class="contact-btn">Get In Touch</a>
+      <a href="/contact" class="contact-btn">Contact</a>
     </div>
 
     <!-- hamburger -->
@@ -368,13 +368,29 @@ import { Font } from "astro:assets";
       align-items: center;
     }
 
+    .nav li a {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .nav li a:hover {
+      color: #d3904b;
+    }
+
     .menu-toggle {
       display: none;
     }
 
     .nav-left {
       display: flex;
-      gap: 2rem;
+      gap: 3.125rem;
       justify-self: start;
     }
 
@@ -385,7 +401,7 @@ import { Font } from "astro:assets";
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 3.125rem;
       justify-self: end;
     }
 
@@ -395,12 +411,19 @@ import { Font } from "astro:assets";
 
     .contact-btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
+      padding: 15px 30px;
       background: white;
-      border-radius: 0.3rem;
-      color: var(--green);
+      border-radius: 10px;
+      color: #15342b;
       text-decoration: none;
       font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .contact-btn:hover {
+      background: #d3904b;
+      color: white;
     }
 
     .mobile-menu {
