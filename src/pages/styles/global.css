@@ -151,4 +151,40 @@ body {
   .cta-sec {
     padding: 90px 470px;
   }
+
+  .cta-title {
+    font-size: 42px;
+    letter-spacing: -0.84px;
+    padding-bottom: 10px;
+  }
+
+  .cta-desc {
+    color: #383b21;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+    padding-bottom: 30px;
+  }
+
+  .cta-btn {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+  }
+
+  .cta-icon {
+    width: 233.805px;
+    height: 255.736px;
+    transform: rotate(-2.177deg);
+    position: absolute;
+    left: 1013.705px;
+    top: 244.765px;
+  }
 }
