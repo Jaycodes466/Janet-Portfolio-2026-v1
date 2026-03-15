@@ -13,3 +13,58 @@
 body {
   font-family: var(--font-body);
 }
+
+/* Services Component Mobile: */
+
+.services-section {
+  padding: 70px 24px 0 24px;
+  background-color: #15342b;
+  text-align: center;
+}
+
+.services-title {
+  color: #fffcf3;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  padding-bottom: 30px;
+}
+
+.service-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.service-card {
+  border-radius: 30px;
+  background: #f6f2e5;
+  padding: 47.5px 50px;
+}
+
+.service-title {
+  padding: 35px 0 10px 0;
+  color: #15342b;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.56px;
+}
+
+.service-desc {
+  color: #15342b;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
