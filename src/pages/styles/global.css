@@ -68,3 +68,25 @@ body {
   font-weight: 400;
   line-height: 24px; /* 150% */
 }
+
+/* Services Component Desktop */
+@media (min-width: 48rem) {
+  .services-section {
+    padding: 70px 105px;
+  }
+
+  .services-title {
+    padding-bottom: 30px;
+  }
+
+  .service-title {
+    padding-bottom: 10px;
+  }
+
+  .service-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
