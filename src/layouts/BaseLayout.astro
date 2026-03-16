@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import "../styles/global.css";
+// import Navbar from "../components/Navbar.astro";
 import Navbar from "../components/Navbar.astro";
 const { pageTitle } = Astro.props;
 ---
@@ -21,8 +22,6 @@ const { pageTitle } = Astro.props;
     <Navbar />
     <h1>{pageTitle}</h1>
     <slot />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <script src="/src/scripts/menu.js"></script>
   </body>
 </html>
