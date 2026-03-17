@@ -12,6 +12,7 @@
 
 body {
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 /* Services Component Mobile: */
@@ -261,4 +262,46 @@ body {
     text-align: left;
     width: 406px;
   }
+}
+
+/* Footer Component Mobile: */
+footer {
+  padding: 100px 25px;
+  background: #15342b;
+  color: #fffcf3;
+  text-align: center;
+}
+
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 35px;
+  padding: 50px 0;
+}
+
+.footer-social-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 50px;
+}
+
+hr {
+  border-width: 2px;
+  opacity: 0.6;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.footer-copyright p {
+  padding: 24px 0 0px 0;
+}
+
+/* Footer Component Desktop */
+@media (min-width: 48rem) {
 }
