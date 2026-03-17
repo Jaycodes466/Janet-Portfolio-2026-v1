@@ -350,9 +350,39 @@ hr {
 }
 
 .footer-copyright p {
-  padding: 24px 0 0px 0;
+  padding: 10px 0 0px 0;
 }
 
 /* Footer Component Desktop */
 @media (min-width: 48rem) {
+  footer {
+    padding: 120px 95px;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 170px;
+  }
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .footer-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-social-container {
+    justify-content: flex-end;
+  }
 }
