@@ -1,63 +1,124 @@
 ---
+import img1 from "../assets/testimonial-img-1.png";
+
 const testimonials = [
   {
     tag: "Presentation & Flyer Design • Copy Writing",
-    quote: `I would highly recommend Janet for any marketing needs...`,
+    quote: `I would highly recommend Janet for any marketing needs. She designed a beautiful pamphlet that captured exactly what I had envisioned.`,
     name: "Cindy Sheridan Murphy",
     title: "Founder and Executive Director",
     org: "Each Moment",
-    image: "../assets/testimonial-img-1.png"
+    image: img1.src,
   },
   {
     tag: "Branding • Web Design",
-    quote: `Working with Janet was seamless and highly professional...`,
+    quote: `Working with Janet was seamless and highly professional from start to finish.`,
     name: "John Doe",
     title: "CEO",
     org: "Example Co.",
-    image: "/images/testimonial-2.jpg"
-  }
+    image: img1.src,
+  },
 ];
---- 
+---
 
 <section class="testimonials">
-  <h2 class="testimonials__heading">
-    What Those I’ve Worked With Have to Say
-  </h2>
+  <h2 class="testimonials__heading">What Those I’ve Worked With Have to Say</h2>
 
   <div class="testimonial-slider" data-slider>
-    
-    <!-- Slides -->
     <div class="testimonial-track">
-      {testimonials.map((t, i) => (
-        <div class="testimonial-slide" data-slide>
-          
-          <!-- Image -->
-          <div class="testimonial-image">
-            <img src={t.image} alt={t.name} loading="lazy" />
-          </div>
+      {
+        testimonials.map((t) => (
+          <div class="testimonial-slide" data-slide>
+            <div class="testimonial-image">
+              <img src={t.image} alt={t.name} loading="lazy" />
+            </div>
 
-          <!-- Content -->
-          <div class="testimonial-content">
-            <span class="testimonial-tag">{t.tag}</span>
+            <div class="testimonial-content">
+              <span class="testimonial-tag">{t.tag}</span>
 
-            <p class="testimonial-quote">{t.quote}</p>
+              <p class="testimonial-quote">{t.quote}</p>
 
-            <div class="testimonial-author">
-              <strong>{t.name}</strong>
-              <span>{t.title}</span>
-              <span>{t.org}</span>
+              <div class="testimonial-author">
+                <strong>{t.name}</strong>
+                <span>{t.title}</span>
+                <span>{t.org}</span>
+              </div>
             </div>
           </div>
-
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-    <!-- Controls -->
     <div class="testimonial-controls">
       <button class="prev" aria-label="Previous">←</button>
       <button class="next" aria-label="Next">→</button>
     </div>
-
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector("[data-slider]");
+    if (!slider) return;
+
+    const track = slider.querySelector(".testimonial-track");
+    const slides = slider.querySelectorAll("[data-slide]");
+    const prevBtn = slider.querySelector(".prev");
+    const nextBtn = slider.querySelector(".next");
+
+    let index = 0;
+    let autoSlide;
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+      }, 5000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    /* Swipe support */
+    let startX = 0;
+
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      stopAutoSlide();
+    });
+
+    track.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (diff > 50) index = (index + 1) % slides.length;
+      if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+      updateSlider();
+      startAutoSlide();
+    });
+
+    /* Pause on hover */
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
+
+    /* Init */
+    updateSlider();
+    startAutoSlide();
+  });
+</script>
