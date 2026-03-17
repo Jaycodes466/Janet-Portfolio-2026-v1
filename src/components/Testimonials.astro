@@ -1,0 +1,63 @@
+---
+const testimonials = [
+  {
+    tag: "Presentation & Flyer Design • Copy Writing",
+    quote: `I would highly recommend Janet for any marketing needs...`,
+    name: "Cindy Sheridan Murphy",
+    title: "Founder and Executive Director",
+    org: "Each Moment",
+    image: "/images/testimonial-1.jpg"
+  },
+  {
+    tag: "Branding • Web Design",
+    quote: `Working with Janet was seamless and highly professional...`,
+    name: "John Doe",
+    title: "CEO",
+    org: "Example Co.",
+    image: "/images/testimonial-2.jpg"
+  }
+];
+--- 
+
+<section class="testimonials">
+  <h2 class="testimonials__heading">
+    What Those I’ve Worked With Have to Say
+  </h2>
+
+  <div class="testimonial-slider" data-slider>
+    
+    <!-- Slides -->
+    <div class="testimonial-track">
+      {testimonials.map((t, i) => (
+        <div class="testimonial-slide" data-slide>
+          
+          <!-- Image -->
+          <div class="testimonial-image">
+            <img src={t.image} alt={t.name} loading="lazy" />
+          </div>
+
+          <!-- Content -->
+          <div class="testimonial-content">
+            <span class="testimonial-tag">{t.tag}</span>
+
+            <p class="testimonial-quote">{t.quote}</p>
+
+            <div class="testimonial-author">
+              <strong>{t.name}</strong>
+              <span>{t.title}</span>
+              <span>{t.org}</span>
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Controls -->
+    <div class="testimonial-controls">
+      <button class="prev" aria-label="Previous">←</button>
+      <button class="next" aria-label="Next">→</button>
+    </div>
+
+  </div>
+</section>

@@ -3,12 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Services from "../components/Services.astro";
 import CTA from "../components/CTA.astro";
 import LearnMore from "../components/LearnMore.astro";
+import Testimonials from "../components/Testimonials.astro";
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Landing Page subtitle</h2>
   <Services />
+  <Testimonials />
   <CTA />
   <LearnMore />
 </BaseLayout>
