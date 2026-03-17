@@ -247,3 +247,18 @@ body {
 }
 
 /* Learn More Component Desktop */
+@media (min-width: 48rem) {
+  .learn-more {
+    padding: 90px 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .learn-more-text-content {
+    text-align: left;
+    width: 406px;
+  }
+}
