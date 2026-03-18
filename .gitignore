@@ -25,9 +25,4 @@ pnpm-debug.log*
 
 
 
-# More things to ignore:
 
-astro.config.*
-package.json
-package-lock.json
-tsconfig.json
