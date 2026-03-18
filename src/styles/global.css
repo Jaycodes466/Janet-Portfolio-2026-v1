@@ -576,7 +576,7 @@ textarea {
   resize: vertical;
 }
 
-button {
+.form-button {
   margin-top: 1.5rem;
   padding: 0.8rem;
   background: #c8873a;
@@ -586,7 +586,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.form-button:hover {
   opacity: 0.9;
 }
 

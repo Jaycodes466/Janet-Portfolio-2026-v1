@@ -110,6 +110,7 @@ import { Font } from "astro:assets";
   }
 
   .nav {
+    position: relative;
     max-width: 75rem;
     margin: 0 auto;
     padding: 1rem 1.5rem;
@@ -132,16 +133,28 @@ import { Font } from "astro:assets";
      HAMBURGER
   ========================= */
   .menu-toggle {
-    width: 2rem;
-    height: 1.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
     background: transparent;
     border: none;
     cursor: pointer;
     z-index: 200;
+    color: white;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 0.15rem;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.35s ease;
   }
 
   .menu-toggle span {
