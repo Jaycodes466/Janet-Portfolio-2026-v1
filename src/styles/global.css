@@ -266,7 +266,7 @@ body {
 
 /* Footer Component Mobile: */
 footer {
-  padding: 100px 25px;
+  padding: 100px 25px 10px 25px;
   background: #15342b;
   color: #fffcf3;
   text-align: center;
@@ -356,7 +356,7 @@ hr {
 /* Footer Component Desktop */
 @media (min-width: 48rem) {
   footer {
-    padding: 120px 95px;
+    padding: 120px 95px 20px 95px;
   }
 
   .footer-top {
@@ -502,5 +502,107 @@ hr {
 
   .testimonial-content {
     text-align: left;
+  }
+}
+
+/* Contact Form Mobile */
+.contact-form-container {
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.contact-form-title {
+  color: #15342b;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.72px;
+  padding-bottom: 20px;
+}
+
+.contact-form-desc {
+  color: #15342b;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  padding-bottom: 30px;
+}
+
+.email-link {
+  font-weight: 700;
+  text-decoration: none;
+  color: #15342b;
+  cursor: pointer;
+}
+
+.contact-form {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: #c8873a;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Contact Form Desktop */
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-group {
+    flex: 1;
   }
 }
