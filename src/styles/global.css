@@ -506,46 +506,11 @@ hr {
 }
 
 /* Contact Form Mobile */
-.contact-form-container {
-  padding: 70px 30px;
-  text-align: center;
-}
-
-.contact-form-title {
-  color: #15342b;
-  text-align: center;
-  font-family: var(--font-serif);
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: -0.72px;
-  padding-bottom: 20px;
-}
-
-.contact-form-desc {
-  color: #15342b;
-  text-align: center;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-  padding-bottom: 30px;
-}
-
-.email-link {
-  font-weight: 700;
-  text-decoration: none;
-  color: #15342b;
-  cursor: pointer;
-}
-
+/* ===== Layout ===== */
 .contact-form {
   max-width: 40rem;
   margin: 0 auto;
   padding: 1rem;
-  text-align: left;
 }
 
 .form-row {
@@ -559,24 +524,123 @@ hr {
   flex-direction: column;
 }
 
+/* ===== Labels ===== */
 label {
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
 }
 
+/* ===== Input Wrapper ===== */
+.input-wrapper {
+  position: relative;
+}
+
+/* ===== Inputs ===== */
 input,
 textarea {
-  padding: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.4rem;
   font-size: 1rem;
+  transition: all 0.25s ease;
 }
 
-textarea {
-  resize: vertical;
+/* ===== Icons ===== */
+.icon {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
-.form-button {
+.textarea-wrapper .icon {
+  top: 1rem;
+  transform: none;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2.5;
+  fill: none;
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.icon-check {
+  stroke: #22c55e;
+}
+
+.icon-x {
+  stroke: #ef4444;
+}
+
+/* ===== VALID ===== */
+.form-group.valid input,
+.form-group.valid textarea {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+}
+
+.form-group.valid .icon-check {
+  animation: popIn 0.3s ease forwards;
+}
+
+/* ===== INVALID ===== */
+.form-group.invalid input,
+.form-group.invalid textarea {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+}
+
+.form-group.invalid .icon-x {
+  animation: shakeIn 0.35s ease forwards;
+}
+
+/* Hide opposite */
+.form-group.valid .icon-x,
+.form-group.invalid .icon-check {
+  opacity: 0;
+}
+
+/* ===== Animations ===== */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shakeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ===== Button ===== */
+.form-contact-btn {
   margin-top: 1.5rem;
   padding: 0.8rem;
   background: #c8873a;
@@ -586,17 +650,18 @@ textarea {
   cursor: pointer;
 }
 
-.form-button:hover {
+.form-contact-btn:hover {
   opacity: 0.9;
 }
 
+/* ===== Errors ===== */
 .error {
-  color: red;
+  color: #ef4444;
   font-size: 0.75rem;
   margin-top: 0.25rem;
 }
 
-/* Contact Form Desktop */
+/* ===== Desktop ===== */
 @media (min-width: 768px) {
   .form-row {
     flex-direction: row;

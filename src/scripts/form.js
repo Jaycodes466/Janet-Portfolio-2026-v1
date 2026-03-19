@@ -1,39 +1,64 @@
 const form = document.querySelector(".contact-form");
+const inputs = form.querySelectorAll("input, textarea");
+
+inputs.forEach((input) => {
+  input.addEventListener("input", () => validateField(input));
+  input.addEventListener("blur", () => validateField(input));
+});
 
 form.addEventListener("submit", (e) => {
   let valid = true;
 
-  const name = form.name;
-  const email = form.email;
-  const message = form.message;
-
-  clearErrors();
-
-  if (name.value.trim().length < 2) {
-    showError(name, "Please enter your name");
-    valid = false;
-  }
-
-  if (!validateEmail(email.value)) {
-    showError(email, "Enter a valid email");
-    valid = false;
-  }
-
-  if (message.value.trim().length < 10) {
-    showError(message, "Message must be at least 10 characters");
-    valid = false;
-  }
+  inputs.forEach((input) => {
+    if (!validateField(input)) valid = false;
+  });
 
   if (!valid) e.preventDefault();
 });
 
-function showError(input, message) {
-  const error = input.parentElement.querySelector(".error");
-  error.textContent = message;
-}
+function validateField(input) {
+  const group = input.closest(".form-group");
+  const error = group.querySelector(".error");
 
-function clearErrors() {
-  document.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
+  let isValid = true;
+
+  if (input.name === "name") {
+    if (input.value.trim().length < 2) {
+      error.textContent = "Enter your name";
+      isValid = false;
+    }
+  }
+
+  if (input.name === "email") {
+    if (!validateEmail(input.value)) {
+      error.textContent = "Enter a valid email";
+      isValid = false;
+    }
+  }
+
+  if (input.name === "message") {
+    if (input.value.trim().length < 10) {
+      error.textContent = "Message must be at least 10 characters";
+      isValid = false;
+    }
+  }
+
+  group.classList.remove("valid", "invalid");
+  void group.offsetWidth;
+
+  if (input.value.trim() === "") {
+    error.textContent = "";
+    return false;
+  }
+
+  if (isValid) {
+    group.classList.add("valid");
+    error.textContent = "";
+  } else {
+    group.classList.add("invalid");
+  }
+
+  return isValid;
 }
 
 function validateEmail(email) {
