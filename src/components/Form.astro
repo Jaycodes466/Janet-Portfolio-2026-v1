@@ -11,12 +11,12 @@ import SuccessModal from "../components/SuccessModal.astro";
     >
   </p>
   <form
+    class="contact-form"
     name="contact"
     method="POST"
+    action="/"
     data-netlify="true"
     netlify-honeypot="bot-field"
-    class="contact-form"
-    action="/"
   >
     <input type="hidden" name="form-name" value="contact" />
     <p hidden>
@@ -85,5 +85,5 @@ import SuccessModal from "../components/SuccessModal.astro";
   </form>
 
   <SuccessModal />
-  <script src="/src/scripts/form.js"></script>
+  <script type="module" src="/src/scripts/form.js"></script>
 </section>
