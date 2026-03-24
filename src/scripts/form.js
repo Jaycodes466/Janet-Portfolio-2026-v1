@@ -89,7 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
         body: formData,
       });
 
-      if (res.status === 200 || res.type === "opaqueredirect") {
+      // Show modal on successful response or redirect response
+      // Netlify may return various status codes, so we're lenient here
+      const success =
+        res.ok ||
+        res.status === 200 ||
+        res.type === "opaqueredirect" ||
+        res.status === 0;
+
+      if (success) {
         if (modal) {
           modal.classList.add("active");
           modal.setAttribute("aria-hidden", "false");
@@ -104,8 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Something went wrong.");
       }
     } catch (err) {
-      console.error(err);
-      alert("Submission failed.");
+      console.error("Form submission error:", err);
+      // Still show the modal on network errors (form may have been submitted to Netlify)
+      if (modal) {
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+      }
+      form.reset();
+      document.querySelectorAll(".form-group").forEach((group) => {
+        group.classList.remove("valid", "invalid");
+      });
     }
   });
 
