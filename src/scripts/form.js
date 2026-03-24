@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   if (!form) return;
 
+  // Only target real user inputs (avoids Netlify hidden field crash)
   const inputs = form.querySelectorAll(
     'input:not([type="hidden"]):not([name="bot-field"]), textarea',
   );
@@ -9,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("success-modal");
   const closeBtn = document.getElementById("close-modal");
 
-  /* ===== VALIDATION ===== */
+  /* =========================
+     VALIDATION
+  ========================= */
 
   inputs.forEach((input) => {
     input.addEventListener("input", () => validateField(input));
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Reset animation states
     group.classList.remove("valid", "invalid");
     void group.offsetWidth;
 
@@ -67,7 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  /* ===== SUBMIT ===== */
+  /* =========================
+     NETLIFY SUBMISSION FIX
+  ========================= */
+
+  function encode(data) {
+    return new URLSearchParams(data).toString();
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -85,26 +95,27 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const res = await fetch("/", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: encode(Object.fromEntries(formData)),
       });
 
-      // Show modal on successful response or redirect response
-      // Netlify may return various status codes, so we're lenient here
-      const success =
-        res.ok ||
-        res.status === 200 ||
-        res.type === "opaqueredirect" ||
-        res.status === 0;
+      console.log("Response:", res);
 
-      if (success) {
+      if (res.ok) {
+        console.log("SUCCESS - showing modal");
+
         if (modal) {
           modal.classList.add("active");
           modal.setAttribute("aria-hidden", "false");
+        } else {
+          console.error("Modal not found in DOM");
         }
 
         form.reset();
 
+        // Reset validation UI
         document.querySelectorAll(".form-group").forEach((group) => {
           group.classList.remove("valid", "invalid");
         });
@@ -113,19 +124,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (err) {
       console.error("Form submission error:", err);
-      // Still show the modal on network errors (form may have been submitted to Netlify)
+
+      // Netlify often still succeeds even if fetch errors
       if (modal) {
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
       }
+
       form.reset();
+
       document.querySelectorAll(".form-group").forEach((group) => {
         group.classList.remove("valid", "invalid");
       });
     }
   });
 
-  /* ===== MODAL ===== */
+  /* =========================
+     MODAL CONTROLS
+  ========================= */
 
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
