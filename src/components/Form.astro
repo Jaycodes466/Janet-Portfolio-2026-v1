@@ -14,11 +14,12 @@ import SuccessModal from "../components/SuccessModal.astro";
     class="contact-form"
     name="contact"
     method="POST"
-    action="/"
+    action="/thankyou"
     data-netlify="true"
     netlify-honeypot="bot-field"
   >
     <input type="hidden" name="form-name" value="contact" />
+    <input type="hidden" name="redirect" value="/thank-you" />
     <p hidden>
       <label>
         Don’t fill this out: <input name="bot-field" />
@@ -84,6 +85,6 @@ import SuccessModal from "../components/SuccessModal.astro";
     <button type="submit" class="form-contact-btn">Get in Touch</button>
   </form>
 
-  <SuccessModal />
+  <!-- <SuccessModal /> -->
   <script type="module" src="/src/scripts/form.js"></script>
 </section>

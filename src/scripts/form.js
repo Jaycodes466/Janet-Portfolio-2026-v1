@@ -2,13 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   if (!form) return;
 
-  // Only target real user inputs (avoids Netlify hidden field crash)
+  // Only target real inputs (avoid Netlify hidden fields)
   const inputs = form.querySelectorAll(
     'input:not([type="hidden"]):not([name="bot-field"]), textarea',
   );
-
-  const modal = document.getElementById("success-modal");
-  const closeBtn = document.getElementById("close-modal");
 
   /* =========================
      VALIDATION
@@ -72,97 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     NETLIFY SUBMISSION FIX
+     BLOCK SUBMIT IF INVALID
   ========================= */
 
-  function encode(data) {
-    return new URLSearchParams(data).toString();
-  }
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
+  form.addEventListener("submit", (e) => {
     let valid = true;
 
     inputs.forEach((input) => {
       if (!validateField(input)) valid = false;
     });
 
-    if (!valid) return;
-
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: encode(Object.fromEntries(formData)),
-      });
-
-      console.log("Response:", res);
-
-      if (res.ok) {
-        console.log("SUCCESS - showing modal");
-
-        if (modal) {
-          modal.classList.add("active");
-          modal.setAttribute("aria-hidden", "false");
-        } else {
-          console.error("Modal not found in DOM");
-        }
-
-        form.reset();
-
-        // Reset validation UI
-        document.querySelectorAll(".form-group").forEach((group) => {
-          group.classList.remove("valid", "invalid");
-        });
-      } else {
-        alert("Something went wrong.");
-      }
-    } catch (err) {
-      console.error("Form submission error:", err);
-
-      // Netlify often still succeeds even if fetch errors
-      if (modal) {
-        modal.classList.add("active");
-        modal.setAttribute("aria-hidden", "false");
-      }
-
-      form.reset();
-
-      document.querySelectorAll(".form-group").forEach((group) => {
-        group.classList.remove("valid", "invalid");
-      });
-    }
-  });
-
-  /* =========================
-     MODAL CONTROLS
-  ========================= */
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      modal.setAttribute("aria-hidden", "true");
-    });
-  }
-
-  if (modal) {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-        modal.setAttribute("aria-hidden", "true");
-      }
-    });
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      modal.classList.remove("active");
-      modal.setAttribute("aria-hidden", "true");
+    //  Stop submission if invalid
+    if (!valid) {
+      e.preventDefault();
     }
   });
 });
