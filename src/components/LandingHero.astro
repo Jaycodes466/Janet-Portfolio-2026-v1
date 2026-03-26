@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import heroTop from "../assets/hero-placeholder-top.png";
+import heroBottom from "../assets/hero-placeholder-bottom.png";
+---
+
+<section class="landing-hero-section">
+  <Image
+    class="hero-top-img"
+    src={heroTop}
+    alt="Landing Hero Top Img"
+    width={390}
+    height={330}
+    sizes="(max-width: 768px) 390px, 700px"
+  />
+  <h1 class="landing-hero-title">
+    Strategic brand design to bridge the gap between you and your <span
+      class="hero-highlight">dream</span
+    > clients
+  </h1>
+  <p class="landing-hero-de">
+    We craft Ecom brands that not only convice people to hit “add to car”, but
+    make you feel like your buesiness got a personal trainer
+  </p>
+  <a href="#" class="hero-contact-btn">Get In Touch</a>
+  <Image
+    class="hero-top-img"
+    src={heroBottom}
+    alt="Landing Hero Bottom Img"
+    width={390}
+    height={330}
+    sizes="(max-width: 768px) 390px, 700px"
+  />
+</section>
