@@ -1,27 +1,59 @@
 ---
-
+import { Image } from "astro:assets";
+import placeholderImg from "../assets/featured-projects-placeholder-img.png";
 ---
 
 <section class="featured-projects-section">
   <h3 class="featured-title">Featured Projects</h3>
   <div class="featured-projects-container">
     <div class="featured-project-card">
-      <!-- IMG Here -->
-      <p class="project-info"></p>
-      <h4 class="project-title"></h4>
-      <p class="project-desc"></p>
+      <Image
+        class="footer-gallery-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+
+      <p class="project-info">Branding Web Design Graphic Design</p>
+      <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+      <p class="project-desc">
+        A natural skincare brand dedicated to helping people embrace their best
+        skin while remaining cruelty free.
+      </p>
     </div>
     <div class="featured-project-card">
-      <!-- IMG Here -->
-      <p class="project-info"></p>
-      <h4 class="project-title"></h4>
-      <p class="project-desc"></p>
+      <Image
+        class="footer-gallery-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+      <p class="project-info">Branding Web Design Graphic Design</p>
+      <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+      <p class="project-desc">
+        A natural skincare brand dedicated to helping people embrace their best
+        skin while remaining cruelty free.
+      </p>
     </div>
     <div class="featured-project-card">
-      <!-- IMG Here -->
-      <p class="project-info"></p>
-      <h4 class="project-title"></h4>
-      <p class="project-desc"></p>
+      <Image
+        class="footer-gallery-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+      <p class="project-info">Branding Web Design Graphic Design</p>
+      <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+      <p class="project-desc">
+        A natural skincare brand dedicated to helping people embrace their best
+        skin while remaining cruelty free.
+      </p>
     </div>
     <a href="#" class="view-all-projects-btn">View All Projects</a>
   </div>
