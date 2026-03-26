@@ -341,7 +341,7 @@ footer {
 }
 
 hr {
-  border-width: 2px;
+  border-width: 1px;
   opacity: 0.6;
   width: 100vw;
   margin-left: 50%;
@@ -372,6 +372,25 @@ hr {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  .footer-nav li a {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .footer-nav li a:hover {
+    color: #d3904b;
+  }
+
+  .footer-contact-btn {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .footer-contact-btn:hover {
+    background: #d3904b;
+    color: white !important;
   }
 
   .footer-gallery {
@@ -808,7 +827,7 @@ textarea {
 }
 
 /* Success Modal Mobile: */
-.modal {
+.thank-you-page {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.25);
@@ -821,11 +840,6 @@ textarea {
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 999;
-}
-
-.modal.active {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 /* Card */
@@ -843,30 +857,8 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.modal.active .modal-content {
-  transform: translateY(0) scale(1);
-  opacity: 1;
-}
-
-/* Close */
-.modal-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #15342b;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.modal-close:hover {
-  opacity: 1;
-}
-
 /* Icon */
-.modal-icon {
+.thanks-icon {
   width: 60px;
   height: 60px;
   margin: 0 auto 20px;
@@ -878,7 +870,7 @@ textarea {
   position: relative;
 }
 
-.modal-title {
+.thanks-title {
   font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 600;
@@ -886,7 +878,7 @@ textarea {
   margin-bottom: 8px;
 }
 
-.modal-desc {
+.thanks-desc {
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 22px;
@@ -896,30 +888,24 @@ textarea {
 
 /* ===== Desktop ===== */
 @media (min-width: 768px) {
-  .modal-content {
+  .thanks-icon-container {
     max-width: 520px;
     padding: 60px 50px 45px;
     border-radius: 18px;
   }
 
-  .modal-close {
-    top: 18px;
-    right: 18px;
-    font-size: 18px;
-  }
-
-  .modal-icon {
+  .thanks-icon {
     width: 70px;
     height: 70px;
     margin-bottom: 25px;
   }
 
-  .modal-title {
+  .thanks-title {
     font-size: 28px;
     line-height: 32px;
   }
 
-  .modal-desc {
+  .thanks-desc {
     font-size: 16px;
     line-height: 26px;
   }
