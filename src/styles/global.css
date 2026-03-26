@@ -365,6 +365,7 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 170px;
+    padding-right: 52px;
   }
 
   .footer-nav ul {
@@ -828,18 +829,12 @@ textarea {
 
 /* Success Modal Mobile: */
 .thank-you-page {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
+  height: 100vh;
 }
 
 /* Card */
@@ -851,10 +846,6 @@ textarea {
   text-align: center;
   width: 100%;
   max-width: 90%;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-  transform: translateY(20px) scale(0.97);
-  opacity: 0;
-  transition: all 0.3s ease;
 }
 
 /* Icon */
