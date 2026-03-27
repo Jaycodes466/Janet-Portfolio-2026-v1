@@ -1338,6 +1338,9 @@ textarea {
 /* Landing Hero Mobile: */
 .landing-hero-section {
   padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .landing-hero-title {
@@ -1368,11 +1371,10 @@ textarea {
 }
 
 .hero-contact-btn {
-  display: flex;
+  display: inline-block;
+  width: auto;
   padding: 20px 30px;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
+
   border-radius: 10px;
   background: #d3904b;
   color: #fef8ef;
@@ -1384,7 +1386,7 @@ textarea {
   letter-spacing: 2.8px;
   text-transform: uppercase;
   text-decoration: none;
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
 }
 
 /* Landing Hero Desktop: */
