@@ -1553,3 +1553,36 @@ textarea {
 }
 
 /* Guiding Principles Desktop */
+@media (min-width: 768px) {
+  .guiding-principles-section {
+    padding: 70px 152px;
+    background-color: #fffcf3;
+  }
+
+  .principles-title {
+    color: #15342b;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.84px;
+    padding-bottom: 40px;
+  }
+
+  .principles-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+  }
+
+  .principles-title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.56px;
+    padding-bottom: 10px;
+  }
+}
