@@ -1471,36 +1471,85 @@ textarea {
 }
 
 /* About Hero Desktop */
+@media (min-width: 768px) {
+  .about-hero-section {
+    padding: 84px 181px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 85px;
+    text-align: left;
+  }
 
-.about-hero-section {
-  padding: 84px 181px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 85px;
-  text-align: left;
+  .hero-text-wrapper {
+    width: 570px;
+    text-align: left;
+  }
+
+  .about-hero-title {
+    text-align: left;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.04px;
+  }
+
+  .about-skills {
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+}
+/* Guiding Principles Mobile */
+.guiding-principles-section {
+  padding: 70px 25px;
+  background-color: #fffcf3;
 }
 
-.hero-text-wrapper {
-  width: 570px;
-  text-align: left;
-}
-
-.about-hero-title {
-  text-align: left;
-  font-size: 52px;
+.principles-title {
+  color: #15342b;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 36px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
-  letter-spacing: -1.04px;
+  line-height: 49px; /* 136.111% */
+  letter-spacing: -0.72px;
 }
 
-.about-skills {
-  text-align: left;
-  padding-bottom: 20px;
+.principles-wrapper {
+  padding: 50px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-card {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-title {
+  padding: 35px 0 10px 0;
+}
+
+.principles-desc {
+  color: #15342b;
+  text-align: center;
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
 }
+
+/* Guiding Principles Desktop */
