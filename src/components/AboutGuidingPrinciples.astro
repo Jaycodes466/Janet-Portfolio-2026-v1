@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import iconOne from "../assets/about-icon-1.png";
+import iconTwo from "../assets/about-icon-2.png";
+import iconThree from "../assets/about-icon-3.png";
+---
+
+<section class="guiding-principles-section">
+  <h1 class="principles-title">What Guides My Work</h1>
+  <div class="principles-wrapper">
+    <div class="principles-card">
+      <Image
+        class="principles-icon"
+        src={iconOne}
+        alt="Guiding principles icon 1"
+        width={80}
+        height={80}
+      />
+      <h2 class="principles-title">Functionality</h2>
+      <p class="principles-desc">
+        We craft Ecom brands that not only convice people to hit “add to car”,
+        but make you feel like your buesiness got a personal trainer
+      </p>
+    </div>
+    <div class="principles-card">
+      <Image
+        class="principles-icon"
+        src={iconTwo}
+        alt="Guiding principles icon 1"
+        width={80}
+        height={80}
+      />
+      <h2 class="principles-title">Unique Design</h2>
+      <p class="principles-desc">
+        We craft Ecom brands that not only convice people to hit “add to car”,
+        but make you feel like your buesiness got a personal trainer
+      </p>
+    </div>
+    <div class="principles-card">
+      <Image
+        class="principles-icon"
+        src={iconThree}
+        alt="Guiding principles icon 1"
+        width={80}
+        height={80}
+      />
+      <h2 class="principles-title">Helping Others</h2>
+      <p class="principles-desc">
+        We craft Ecom brands that not only convice people to hit “add to car”,
+        but make you feel like your buesiness got a personal trainer
+      </p>
+    </div>
+  </div>
+</section>
