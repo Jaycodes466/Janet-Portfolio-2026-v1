@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import aboutHeroImg from "../assets/about-hero-img.png";
+---
+
+<section class="about-hero-section">
+  <Image
+    class="hero-top-img"
+    src={aboutHeroImg}
+    alt="About hero img"
+    width={390}
+    height={330}
+    sizes="(max-width: 768px) 390px, 700px"
+  />
+</section>
