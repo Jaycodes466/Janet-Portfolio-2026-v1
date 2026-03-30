@@ -1425,3 +1425,49 @@ textarea {
     margin: 50px 0 0 0;
   }
 }
+
+/* About Hero Mobile */
+.about-hero-section {
+  padding: 84px 30px;
+  background: #f6f2e5;
+}
+
+.about-hero-title {
+  color: #15342b;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  padding: 52px 0 10px 0;
+}
+
+.about-fancy {
+  font-family: var(--font-script);
+}
+
+.about-skills {
+  color: #15342b;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  opacity: 0.7;
+  text-align: center;
+  padding-bottom: 22px;
+}
+
+.about-hero-description {
+  color: #15342b;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+/* About Hero Desktop */
