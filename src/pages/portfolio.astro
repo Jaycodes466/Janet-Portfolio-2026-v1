@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import PersonalProjects from "../components/PersonalProjects.astro";
 const pageTitle = "Portfolio Page";
 import { Image } from "astro:assets";
 import portfolioHeroImg from "../assets/portfolio-hero-img.png";
@@ -27,4 +29,7 @@ import portfolioHeroImg from "../assets/portfolio-hero-img.png";
       />
     </div>
   </section>
+  <FeaturedProjects />
+  <hr />
+  <PersonalProjects />
 </BaseLayout>

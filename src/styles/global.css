@@ -1244,8 +1244,9 @@ textarea {
   }
 }
 
-/* Featured Projects Component Mobile: */
-.featured-projects-section {
+/* Featured Projects Component Mobile:  + Personal Projects: */
+.featured-projects-section,
+.personal-projects-section {
   background-color: #f6f2e5;
   display: flex;
   flex-direction: column;
@@ -1254,7 +1255,8 @@ textarea {
   padding: 70px 25px;
 }
 
-.featured-title {
+.featured-title,
+.personal-title {
   color: #15342b;
   text-align: center;
   font-family: var(--font-serif);
@@ -1266,12 +1268,13 @@ textarea {
   padding-bottom: 20px;
 }
 
-.featured-project-img {
+.featured-project-img,
+.personal-project-img {
   border-radius: 20px;
   aspect-ratio: 387.45/332.18;
 }
 
-.featured-project-card {
+.featured-project-card .personal-project-card {
   padding-bottom: 50px;
 }
 

@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import placeholderImg from "../assets/featured-projects-placeholder-img.png";
+---
+
+<section class="personal-projects-section">
+  <h3 class="personal-title">My Personal Projects</h3>
+  <div class="personal-projects-container">
+    <div class="personal-project-card">
+      <Image
+        class="personal-project-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+      <div class="project-info-wrapper">
+        <p class="project-info">
+          Branding &#183; Web Design &#183; Graphic Design
+        </p>
+        <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+        <p class="project-desc">
+          A natural skincare brand dedicated to helping people embrace their
+          best skin while remaining cruelty free.
+        </p>
+      </div>
+    </div>
+    <div class="featured-project-card">
+      <Image
+        class="featured-project-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+      <div class="project-info-wrapper">
+        <p class="project-info">
+          Branding &#183; Web Design &#183; Graphic Design
+        </p>
+        <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+        <p class="project-desc">
+          A natural skincare brand dedicated to helping people embrace their
+          best skin while remaining cruelty free.
+        </p>
+      </div>
+    </div>
+    <div class="featured-project-card">
+      <Image
+        class="featured-project-img"
+        src={placeholderImg}
+        alt="Placeholder project img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+      <div class="project-info-wrapper">
+        <p class="project-info">
+          Branding &#183; Web Design &#183; Graphic Design
+        </p>
+        <h4 class="project-title">Buffalo Bill's Skin Care</h4>
+        <p class="project-desc">
+          A natural skincare brand dedicated to helping people embrace their
+          best skin while remaining cruelty free.
+        </p>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="view-all-projects-btn">View All Projects</a>
+</section>
