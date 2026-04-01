@@ -1586,3 +1586,69 @@ textarea {
     padding-bottom: 10px;
   }
 }
+
+/* Portfolio Page Mobile Styles: */
+.portfolio-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f6f2e5;
+  height: 100vh;
+  width: 100%;
+}
+
+.portfolio-text-wrapper {
+  padding: 70px 45px;
+  text-align: center;
+}
+
+.portfolio-title {
+  color: #15342b;
+  text-align: center;
+  font-family: Lora;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 111.111% */
+  letter-spacing: -0.72px;
+  padding-bottom: 25px;
+}
+
+.portfolio-desc {
+  color: #15342b;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  padding-bottom: 30px;
+}
+
+.portfolio-btn {
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid #15342b;
+  color: #15342b;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.portfolio-hero-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-hero-img {
+  width: 100vw;
+  height: 100%;
+}
+
+/* Portfolio Page Desktop Styles: */

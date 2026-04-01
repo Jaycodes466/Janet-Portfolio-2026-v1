@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Portfolio Page";
+import { Image } from "astro:assets";
+import portfolioHeroImg from "../assets/portfolio-hero-img.png";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="portfolio-hero">
+    <div class="portfolio-text-wrapper">
+      <h1 class="portfolio-title">
+        My Brand, Graphic, and Web Design Portfolio
+      </h1>
+      <p class="portfolio-desc">
+        Take a look at some of my work and featured projects
+      </p>
+      <button class="portfolio-btn">Scroll Down</button>
+    </div>
+    <div class="portfolio-hero-img-container">
+      <Image
+        class="portfolio-hero-img"
+        src={portfolioHeroImg}
+        alt="About hero img"
+        width={390}
+        height={330}
+        sizes="(max-width: 768px) 390px, 700px"
+      />
+    </div>
+  </section>
+</BaseLayout>
